@@ -1,0 +1,21 @@
+<div class="container mt-5" *ngIf="logged">
+	<div class="row">
+		<div class="dialogues col-3">
+			<li class="list-group" *ngFor="let dial of dialogues">
+				<ul [ngClass]="{'active':dial.id==activeDial}" class="list-group-item list-group-item-action" (click)="getMessages(dial.id);">{{dial.userName}}</ul>
+			</li>
+		</div>
+		<div class="messages col-9" *ngIf="messages">
+			<div class="input-group mb-3">
+				  <textarea rows="3" cols="100" (keyup.enter)="sendMessage()" [(ngModel)]="messageArea"  class="disable-resize form-control"></textarea>
+				  <div class="input-group-append">
+				    <button class="btn btn-outline-secondary" (click)="sendMessage()" type="button">Send</button>
+				  </div>
+			</div>
+			<li class="list-group" *ngFor="let mes of messages; let i = index;  ">
+				<ul [ngClass]="{'list-group-item-primary text-right':messages[messages.length - i - 1].userIdFrom==logged.id}" class="list-group-item">{{messages[messages.length - i - 1].data}}</ul>
+			</li>
+
+		</div>
+	</div>
+</div>

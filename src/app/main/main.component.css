@@ -1,0 +1,20 @@
+.dialogues
+{
+    padding:       30px 10px;
+    border:        1px solid;
+    border-radius: 10px;
+
+}
+
+.messages
+{
+    padding:       30px 10px;
+    border:        1px solid;
+    border-left:   0;
+    border-radius: 10px;
+}
+
+.disable-resize{
+    resize: none;
+
+}

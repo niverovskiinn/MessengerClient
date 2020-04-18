@@ -1,0 +1,16 @@
+<div >
+    <form class="form-signup col" #signUpForm="ngForm" novalidate (ngSubmit)="onSubmit(signUpForm)">
+		<h1 class="h3 mb-3 font-weight-normal">Sign up</h1>
+	    <input type="text" name="name" ngModel class="form-control" placeholder="Name" required autofocus>
+		<input type="text" name="login" ngModel class="form-control" placeholder="Login" pattern=".{6,}" required>
+		<input type="password"
+		       name="password"
+		       ngModel
+		       class="form-control"
+		       placeholder="Password"
+		       required
+		       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+		<input type="date" name="birthday" ngModel class="form-control" placeholder="Birthday" required>
+	    <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
+    </form>
+</div>
